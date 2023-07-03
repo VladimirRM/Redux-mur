@@ -20,7 +20,7 @@ function App() {
 
   const addCustomer =  (name)=>{
     const customer ={
-      name: '',
+      name,
       id: Date.now(),
     }
        dispatch({type: 'ADD_CUSTOMER',payload: customer})
@@ -41,13 +41,13 @@ function App() {
     }}>{cash}</div>
       <button onClick={()=>addCash(Number(prompt()))}>ADD</button>
       <button onClick={()=>getCash(Number(prompt()))}>GET</button>
-      <button onClick={()=>addCustomer(Number(prompt()))}>Add Customer</button>
+      <button onClick={()=>addCustomer((prompt()))}>Add Customer</button>
       {/* <button onClick={()=>deleteCustomer(Number(prompt()))}> Delete Customer</button> */}
        <div>
         {customers.length > 0 ? 
       <div>
         {customers.map(customer=>
-          <div>{customer}</div>)}
+          <div onClick={()=>removeCustomer(customer)}>{customer. name}</div>)}
       </div>:
       <div>Customers not found</div>  
       }
