@@ -10,7 +10,7 @@ const REMOVE_CUSTOMERS = "REMOVE_CUSTOMERS"
     switch (action.type){
         case ADD_MANY_CUSTOMERS:
             return{
-              ...state, customers:[...state.customers,...state.payload]
+              ...state, customers:[...state.customers,...action.payload]
             }
         case ADD_CUSTOMER:{
           return{...state, customers:[...state.customers,action.payload]}
@@ -23,5 +23,5 @@ const REMOVE_CUSTOMERS = "REMOVE_CUSTOMERS"
 }
 
 export const addCustomerAction = (payload)=>({type:ADD_CUSTOMER,payload})
-export const addManyCustomersAction = (payload)=>({type:ADD_MANY-CUSTOMERS,payload})
+export const addManyCustomersAction = (payload)=>({type:ADD_MANY_CUSTOMERS,payload})
 export const removeCustomerAction = (payload)=>({type:REMOVE_CUSTOMERS,payload})
