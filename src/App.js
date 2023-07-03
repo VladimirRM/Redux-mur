@@ -27,13 +27,13 @@ function App() {
     }}>{cash}</div>
       <button onClick={()=>addCash(Number(prompt()))}>ADD</button>
       <button onClick={()=>getCash(Number(prompt()))}>GET</button>
-      <button onClick={()=>Add(Number(prompt()))}>GET</button>
-      <button onClick={()=>getCash(Number(prompt()))}>GET</button>
+      <button onClick={()=>addCustomer(Number(prompt()))}>Add Customer</button>
+      <button onClick={()=>deleteCustomer(Number(prompt()))}> Delete Customer</button>
          {customers.length > 0 ?
           <div>
-            {customers.map(( customer)=>(
-              <div>{customer}</div>
-            ))}
+         {customers.map((customer)=>(
+          <div>{customer.name}</div>
+         ))}
 
           </div>:
           <div>
