@@ -21,13 +21,25 @@ function App() {
 
 
   return (
-    <div  style={{ fontSize: '100px',justifyContent:'center' ,textAlign:'center'}}className={'app'}>
+    <div  style={{ fontSize: '40px',justifyContent:'center' ,textAlign:'center'}}className={'app'}>
       <div style={{textAlign:'center',
         
     }}>{cash}</div>
       <button onClick={()=>addCash(Number(prompt()))}>ADD</button>
       <button onClick={()=>getCash(Number(prompt()))}>GET</button>
-  
+      <button onClick={()=>Add(Number(prompt()))}>GET</button>
+      <button onClick={()=>getCash(Number(prompt()))}>GET</button>
+         {customers.length > 0 ?
+          <div>
+            {customers.map(( customer)=>(
+              <div>{customer}</div>
+            ))}
+
+          </div>:
+          <div>
+            Not customers
+          </div> 
+        }
 
     </div>
   );
