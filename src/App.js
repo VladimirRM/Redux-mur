@@ -26,6 +26,12 @@ function App() {
        dispatch({type: 'ADD_CUSTOMER',payload: customer})
   }
 
+  const removeCustomer = (customer)=>{
+    dispatch({ type: "REMOVE_CUSTOMER", payload: customer.id})
+  }
+
+
+
 
 
   return (
@@ -36,18 +42,16 @@ function App() {
       <button onClick={()=>addCash(Number(prompt()))}>ADD</button>
       <button onClick={()=>getCash(Number(prompt()))}>GET</button>
       <button onClick={()=>addCustomer(Number(prompt()))}>Add Customer</button>
-      <button onClick={()=>deleteCustomer(Number(prompt()))}> Delete Customer</button>
-         {customers.length > 0 ?
-          <div>
-         {customers.map((customer)=>(
-          <div>{customer.name}</div>
-         ))}
-
-          </div>:
-          <div>
-            Not customers
-          </div> 
-        }
+      {/* <button onClick={()=>deleteCustomer(Number(prompt()))}> Delete Customer</button> */}
+       <div>
+        {customers.length > 0 ? 
+      <div>
+        {customers.map(customer=>
+          <div>{customer}</div>)}
+      </div>:
+      <div>Customers not found</div>  
+      }
+       </div>
 
     </div>
   );

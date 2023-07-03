@@ -8,4 +8,4 @@ const rootReducer = combineReducers({
     customers: customerReducer
 })
 
- export const store = createStore(rootReducer,composeWithDevTools())
+ export const store = createStore(rootReducer,composeWithDevTools( ))
