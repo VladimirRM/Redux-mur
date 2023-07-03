@@ -18,6 +18,14 @@ function App() {
     dispatch({type:"GET_CASH",payload: cash})
   }
 
+  const addCustomer =  (name)=>{
+    const customer ={
+      name: '',
+      id: Date.now(),
+    }
+       dispatch({type: 'ADD_CUSTOMER',payload: customer})
+  }
+
 
 
   return (
