@@ -2,6 +2,9 @@ const initialState = {
     customers:[],
 }
 
+const ADD_CUSTOMER = "ADD_CUSTOMER"
+const REMOVE_CUSTOMERS = "REMOVE_CUSTOMERS"
+
  export  const customerReducer = (state=initialState, action)=>{
     switch (action.type){
         case "ADD_CUSTOMER":{
@@ -13,3 +16,6 @@ const initialState = {
         default: return state
     }
 }
+
+export const addCustomerAction = (payload)=>({type:'ADD_CUSTOMER',payload})
+export const removeCustomerAction = (payload)=>({type:'REMOVE_CUSTOMER',payload})
