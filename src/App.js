@@ -27,7 +27,7 @@ function App() {
   }
 
   const removeCustomer = (customer)=>{
-    dispatch({ type: "REMOVE_CUSTOMER", payload: customer.id})
+    dispatch({ type: "REMOVE_CUSTOMERS", payload: customer.id})
   }
 
 
@@ -47,7 +47,7 @@ function App() {
         {customers.length > 0 ? 
       <div>
         {customers.map(customer=>
-          <div onClick={()=>removeCustomer(customer)}>{customer. name}</div>)}
+          <div onClick={()=>removeCustomer(customer)} style={{border: '1px solid black', padding:'10px 20px'}} >{customer.name}</div>)}
       </div>:
       <div>Customers not found</div>  
       }
