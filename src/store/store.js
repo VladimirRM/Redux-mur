@@ -3,6 +3,7 @@ import {cashReducer} from './cashReducer'
 import {customerReducer}   from './customerReducer'
 
 import { combineReducers } from 'redux'
+import thunk from 'redux-thunk'
 
 
 export const rootReducer = combineReducers({
@@ -12,4 +13,4 @@ export const rootReducer = combineReducers({
 
 
 
- export const store = createStore(rootReducer,applyMiddleware())
+ export const store = createStore(rootReducer,applyMiddleware(thunk))

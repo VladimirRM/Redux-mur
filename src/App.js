@@ -1,6 +1,8 @@
 
 import './App.css';
 import { useDispatch,useSelector } from 'react-redux';
+import {addCustomersAction, removeCustomersAction} from './store/customerReducer'
+import { fetchCustomers } from './store/customerReducer1';
 
 function App() {
 
@@ -15,6 +17,17 @@ function App() {
     const getCash = (cash)=>{
         dispatch({type: "GET_CASH",payload: cash})
     }
+      const addCustomers =(name)=>{
+        const customer = {
+            name,
+            id: Date.now(),
+        }
+        dispatch(addCustomersAction(customer))
+      }
+
+      const removeCustomers =(customer)=>{
+          dispatch(removeCustomersAction(customer.id))
+      }
 
 
   return (
@@ -22,13 +35,20 @@ function App() {
         {cash}
         <button onClick={()=> addCash(Number(prompt()))}>Add</button>
         <button onClick={()=> getCash(Number(prompt()))}>Get</button>
-        <button onClick={()=> addCustomers(prompt())}>Get</button>
+        <button onClick={()=> addCustomers(prompt())}>Add customers</button>
+        <button onClick={()=> dispatch(fetchCustomers())}>Get customers from data</button>
         <div>
-            {customers.length > 0 ? 
-              <div></div>:
-              <div>Client not found</div>    
+            
+          {customers.length > 0 ? 
+           <div >
+            {customers.map(customer=>
+            <div onClick={()=>removeCustomers(customer)}>{customer.name}</div>
+            )}
+           </div>  :
+           <div>Customer not found</div>
         }
         </div>
+
     </div>
   );
 }
