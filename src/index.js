@@ -8,6 +8,8 @@ const reducer  = (state,action)=>{
    switch (action.type) {
       case ADD_CASH:
          return {...state,cash: state.cash + action.payload}
+      case GET_CASH:
+         return {...state,cash: state.cash - action.payload}
 
          default: return state
    }
@@ -20,9 +22,13 @@ import { createStore } from 'redux';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+   <Provider store={store}>
+        <React.StrictMode>
     <App />
   </React.StrictMode>
+
+   </Provider>
+
 );
 
 
