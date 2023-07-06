@@ -4,12 +4,13 @@ import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
+import {cashReducer} from './store/cashReducer'
 
 const initialState = {
    cash: 0,
 }
 
-const reducer  = (state = initialState,action)=>{
+const cashReducer  = (state = initialState,action)=>{
    switch (action.type) {
       case "ADD_CASH":
          return {...state,cash: state.cash + action.payload}
