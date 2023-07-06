@@ -5,6 +5,10 @@ import { useDispatch,useSelector } from 'react-redux';
 function App() {
     const dispatch = useDispatch()
     const cash = useSelector((state)=> state.cash)
+
+    const addCash = (cash)=> {
+       dispatch({type:"ADD_CASH", payload:cash})
+    }
   return (
     <div className="App">
         {cash}
