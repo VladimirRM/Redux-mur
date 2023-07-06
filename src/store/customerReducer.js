@@ -1,8 +1,8 @@
 const initialState = {
-  cash: 0,
+  customer:[],
 }
 
-const cashReducer  = (state = initialState,action)=>{
+const customerReducer  = (state = initialState,action)=>{
   switch (action.type) {
      case "ADD_CASH":
         return {...state,cash: state.cash + action.payload}
