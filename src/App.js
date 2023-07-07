@@ -31,7 +31,7 @@ function App() {
         <div>
             {customers.length > 0 ? 
             <div>{customers.map(customer=>
-                <div>{customer.name}</div>
+                <div onClick={()=>remove}>{customer.name}</div>
                 )}</div>    :
             <div>Customers not found</div>
         }
