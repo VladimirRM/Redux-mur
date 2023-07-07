@@ -3,25 +3,10 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import {cashReducer} from './store/cashReducer'
+import {store}  from './store'
 
-const initialState = {
-   cash: 0,
-}
 
-const cashReducer  = (state = initialState,action)=>{
-   switch (action.type) {
-      case "ADD_CASH":
-         return {...state,cash: state.cash + action.payload}
-      case "GET_CASH":
-         return {...state,cash: state.cash - action.payload}
 
-         default: return state
-   }
-}
-
-const store = createStore(reducer)
 
 
 
