@@ -8,7 +8,7 @@ const GET_CUSTOMERS = 'GET_CUSTOMERS'
  export const customerReducer  = (state = initialState,action)=>{
   switch (action.type) {
      case ADD_CUSTOMERS:
-        return {...state,cash: state.cash + action.payload}
+        return {...state,customers: [...state.customers,action.payload]}
      case GET_CUSTOMERS:
         return {...state,cash: state.cash - action.payload}
 

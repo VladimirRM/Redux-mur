@@ -29,7 +29,12 @@ function App() {
         <button onClick={()=>getCash(Number(prompt()))}>Get</button>
         <button onClick={()=>addCustomers(prompt())}>Add customers</button>
         <div>
-            {}
+            {customers.length > 0 ? 
+            <div>{customers.map(customer=>
+                <div>{customer.name}</div>
+                )}</div>    :
+            <div>Customers not found</div>
+        }
         </div>
     </div>
   );
