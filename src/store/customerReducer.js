@@ -1,5 +1,5 @@
 const initialState = {
-  customer:[],
+  customers:[],
 }
 
  export const customerReducer  = (state = initialState,action)=>{
@@ -13,4 +13,3 @@ const initialState = {
   }
 }
 
-const store = createStore(reducer)
