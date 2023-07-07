@@ -5,6 +5,10 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 
+const initialState = {
+   cash:0,
+}
+
 
 const reducer = (state,action)=>{
    switch (action.type){
