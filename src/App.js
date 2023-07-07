@@ -6,6 +6,7 @@ import { addCustomerAction } from './store/customerReducer';
 function App() {
     const dispatch = useDispatch()
     const cash = useSelector((state)=> state.cash.cash)
+    const customers = useSelector((state)=> state.customers.customers)
 
     const addCash = (cash)=> {
        dispatch({type:"ADD_CASH", payload:cash})
@@ -27,6 +28,9 @@ function App() {
         <button onClick={()=>addCash(Number(prompt()))}>Add</button>
         <button onClick={()=>getCash(Number(prompt()))}>Get</button>
         <button onClick={()=>addCustomers(prompt())}>Add customers</button>
+        <div>
+            {}
+        </div>
     </div>
   );
 }
