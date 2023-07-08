@@ -5,7 +5,11 @@ import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const reducer = (state,action)=>{
+
+const initialState = {
+    cash: 0,
+}
+const reducer = (state = initialState,action)=>{
         switch (action.type){
               case"ADD_CASH":
               return {...state,cash: state.cash + action.payload}
