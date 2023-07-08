@@ -3,7 +3,7 @@ import {customersReducer} from './customerReducer'
 
 
 export const rootReducer = combineReducers({
-   cash: cashREducers,
+   cash: cashReducer,
    customers: customersReducer,
 })
 
