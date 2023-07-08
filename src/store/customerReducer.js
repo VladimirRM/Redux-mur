@@ -1,5 +1,5 @@
 const initialState = {
-   cash: 0,
+   customer:[],
 }
 const customerReducer = (state = initialState,action)=>{
        switch (action.type){
