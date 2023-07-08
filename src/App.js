@@ -1,6 +1,7 @@
 
 import './App.css';
 import { useDispatch,useSelector } from 'react-redux';
+import { addCustomersAction } from './store/customerReducer';
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
 
     const addCustomers = (name)=>{
         
+        dispatch(addCustomersAction(customer))
     }
   return (
     <div className="App">
