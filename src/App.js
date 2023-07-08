@@ -8,6 +8,9 @@ function App() {
     const cash = useSelector((state)=>state.cash)
   return (
     <div className="App">
+        {cash}
+        <button onClick={()=>addCash(Number(prompt()))}></button>
+        <button onClick={()=>getCash(Number(prompt()))}></button>
 
     </div>
   );
