@@ -17,7 +17,10 @@ function App() {
     }
 
     const addCustomers = (name)=>{
-        
+        const customer = {
+            name,
+            id:Date.now()
+        }
         dispatch(addCustomersAction(customer))
     }
   return (
