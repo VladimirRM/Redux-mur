@@ -9,6 +9,8 @@ function App() {
   return (
     <div className="App">
         {cash}
+        <button onClick={()=>addCash(Number(prompt()))}></button>
+        <button onClick={()=>getCash(Number(prompt()))}></button>
     </div>
   );
 }
