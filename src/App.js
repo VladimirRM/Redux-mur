@@ -8,6 +8,7 @@ function App() {
     const cash = useSelector((state)=> state.cash)
   return (
     <div className="App">
+        {cash}
     </div>
   );
 }
