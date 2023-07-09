@@ -16,8 +16,8 @@ function App() {
   return (
     <div className="App">
         {cash}
-        <button onClick={()=>addCash(Number(prompt()))}></button>
-        <button onClick={()=>getCash(Number(prompt()))}></button>
+        <button onClick={()=>addCash(Number(prompt()))}>ADD</button>
+        <button onClick={()=>getCash(Number(prompt()))}>GET</button>
     </div>
   );
 }
