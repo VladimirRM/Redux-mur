@@ -1,7 +1,7 @@
 
 import './App.css';
 import { useDispatch,useSelector } from 'react-redux';
-import { addCustomersAction } from './store/customerReducer';
+import { addCustomersAction, removeCustomersAction } from './store/customerReducer';
 
 function App() {
     const dispatch = useDispatch()
@@ -21,6 +21,9 @@ function App() {
         }
         dispatch(addCustomersAction(customer))
     }
+    const removeCustomers = (customer)=>{
+        dispatch(removeCustomersAction(customer.id))
+    }
   return (
     <div className="App">
         {cash}
@@ -30,7 +33,7 @@ function App() {
         <div>
             {customers.length > 0 ? 
             <div>{customers.map(customer=>
-                <div>{customer.name}</div>
+                <div onClick={()=>removeCustomers(customer)}>{customer.name}</div>
                 )}</div>    :
             <div>Customers not found</div>
         }
