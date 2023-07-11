@@ -2,23 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import { Provider } from 'react-redux';
-import {store}  from './store/store'
+import { createStore } from 'redux';
+const initialState = {
+  cash: 0,
+}
+export const reducer = (state,action)=>{
+
+}
 
 
 
-
-
-
-
+export const store = createStore(reducer)
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Provider store={store}>
   <React.StrictMode>
     <App />
   </React.StrictMode>
-  </Provider>
-
 );
 
 
