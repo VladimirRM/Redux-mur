@@ -5,7 +5,10 @@ import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-const reducer = (state,action)=>{
+const initialState = {
+  cash: 0,
+}
+const reducer = (state = initialState,action)=>{
      switch( action.type ){
        case "ADD_CASH":
         return {...state,cash:state.cash + action.payload}
@@ -15,9 +18,6 @@ const reducer = (state,action)=>{
      }
 }
 
-const initialState = {
-  cash: 0,
-}
 
 
 const store = createStore(reducer)
@@ -27,7 +27,7 @@ const store = createStore(reducer)
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<Provider>
+<Provider store={store}>
 <React.StrictMode>
     <App />
   </React.StrictMode>
