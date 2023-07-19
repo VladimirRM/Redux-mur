@@ -10,7 +10,7 @@ const REMOVE_CUSTOMERS = "REMOVE_CUSTOMERS"
  export const customerReducer = ( state= initialState,action)=>{
     switch(action.type){
        case ADD_CUSTOMERS: 
-       return {...state,customer:[...state.customers,action.payload]}
+       return {...state,customers:[...state.customers,action.payload]}
        case REMOVE_CUSTOMERS: 
        return {...state,customers: [state.customers.filter((customer)=> customer.id !== action.payload)]}
       default: return state
