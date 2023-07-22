@@ -2,6 +2,7 @@
 import './App.css';
 import { useDispatch,useSelector } from 'react-redux';
 import { addCustomersAction } from './store/customerReducer';
+import { fetchCustomers } from './asyncActions/customers';
 
 function App() {
   const dispatch = useDispatch()
@@ -28,6 +29,7 @@ function App() {
       <button onClick={()=>addCash(Number(prompt()))}>Add cash</button>
       <button onClick={()=>getCash(Number(prompt()))}>Get cash</button>
       <button onClick={()=>addCustomers(prompt())}>Add customers</button>
+      <button onClick={()=>dispatch(fetchCustomers())}>Add customers from data</button>
       {customers.map(customer=>(
         <div key={customer.id}>{customer.name}</div>
       ))}
