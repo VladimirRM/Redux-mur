@@ -12,7 +12,7 @@ case'ADD_CUSTOMERS':
 return {...state,customers: [...state.customers, action.payload]}
 case'ADD_MANY_CUSTOMERS':
 return {...state,customers: [...state.customers, ...action.payload]}
-case'REMOVE_CASH':
+case'REMOVE_CUSTOMERS':
 return {...state,customers: [...state.customers.filter(customers=>customers.id !== action.payload)]}
 
 
