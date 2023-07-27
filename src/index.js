@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import  {createStore } from 'react-redux'
+import  {createStore } from 'redux'
+import { Provider } from 'react-redux';
 
 const initialState = {
   cash: 0,
 }
 
-const reducer = (state,action)=>{
+const reducer = (state = initialState,action)=>{
   switch(action.type){
     case 'ADD_CASH':
       return {...state,cash:state.cash + action.payload}
@@ -23,10 +24,12 @@ const reducer = (state,action)=>{
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-
+   <Provider store={store}>
   <React.StrictMode>
     <App />
   </React.StrictMode>
+   </Provider>
+
 
 
 );
