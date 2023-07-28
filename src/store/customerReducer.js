@@ -1,13 +1,13 @@
 
 const initialState = {
-  customer:[],
+  customers:[],
 }
 const ADD_CUSTOMER = 'ADD_CUSTOMER'
 const REMOVE_CUSTOMER = 'REMOVE_CUSTOMER'
  export const customersReducer = (state = initialState,action)=>{
   switch(action.type){
     case ADD_CUSTOMER:
-      return {...state,cash:state.cash + action.payload}
+      return {...state,customers: [...state.customers,action.payload]}
     case REMOVE_CUSTOMER:
       return {...state,cash:state.cash  - action.payload}
 
